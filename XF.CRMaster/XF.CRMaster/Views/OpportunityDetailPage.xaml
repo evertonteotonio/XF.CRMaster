@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XF.CRMaster.Views.OpportunityDetailPage"
+             Title="{Binding Title}">
+    <StackLayout Spacing="20" Padding="15" Margin="10,0">
+
+
+        <FlexLayout Direction="Column"
+            AlignItems="Stretch"
+            JustifyContent="SpaceEvenly">
+
+            <Label x:Name="IdOpportunityLabel" Text="{Binding Opportunity.Id}" IsVisible="False" FontSize="Small"/>
+
+            <Label Text="Nome:" FontSize="Medium" />
+            <Label Text="{Binding FullName}" FontSize="Small"/>
+            <Label Text="Email:" FontSize="Medium" />
+            <Label Text="{Binding Lead.Email}" FontSize="Small"/>
+
+        </FlexLayout>
+
+        <!--<StackLayout Spacing="20" Padding="0, 0, 15, 15">
+            <Label Text="Nome:" FontSize="Medium" />
+            <Label Text="{Binding FullName}" FontSize="Small"/>
+            <Label Text="Email:" FontSize="Medium" />
+            <Label Text="{Binding Lead.Email}" FontSize="Small"/>
+        </StackLayout>-->
+
+        <FlexLayout Direction="Column"
+            AlignItems="Stretch"
+            JustifyContent="SpaceEvenly">
+
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Status:" FontSize="Medium" />
+                <Label Text="{Binding Opportunity.Status}" FontSize="Small"/>
+            </StackLayout>
+
+
+            <Label Text="Descrição:" FontSize="Medium" />
+            <Label Text="{Binding Opportunity.Description}" FontSize="Small"/>
+
+            <Label Text="Cep:" FontSize="Medium" />
+            <Label Text="{Binding Opportunity.Cep}" FontSize="Small"/>
+
+            <Label Text="Logradouro:" FontSize="Medium" />
+            <Label Text="{Binding Opportunity.Logradouro}" FontSize="Small"/>
+
+            <Label Text="Bairro:" FontSize="Medium" />
+            <Label Text="{Binding Opportunity.Bairro}" FontSize="Small"/>
+
+            <Button Text="Excluir!"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                Clicked="DeletButtonClicked" />
+
+        </FlexLayout>
+        
+    </StackLayout>
+</ContentPage>

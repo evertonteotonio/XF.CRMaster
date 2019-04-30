@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+    <PackageReference Include="Plugin.Permissions" Version="3.0.0.12" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.5.231" />
+    <PackageReference Include="Xam.Plugin.ExternalMaps" Version="4.0.1" />
+    <PackageReference Include="Xam.Plugin.Media" Version="4.0.1.5" />
+    <PackageReference Include="Xamarin.Forms" Version="3.6.0.344457" />  
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\NewOpportunityPage.xaml.cs">
+      <DependentUpon>NewOpportunityPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\OpportunityDetailPage.xaml.cs">
+      <DependentUpon>OpportunityDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\OpportunitiesPage.xaml.cs">
+      <DependentUpon>OpportunitiesPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XF.CRMaster.Views.NewOpportunityPage"
+             Title="Nova Oportunidade">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="cancel.png"/>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        <ToolbarItem Text="Save" Clicked="Save_Clicked">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="save.png"/>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+
+        <ScrollView>
+            <StackLayout Spacing="20" Padding="15">
+
+
+                <Entry x:Name="IdLead" Text="1" FontSize="Small" IsVisible="False" />
+
+                <StackLayout>
+                    <Picker x:Name="PckLead"
+                        Title="Selecione um Lead:"
+                        ItemsSource="{Binding Leads}"
+                        SelectedIndexChanged="PckLead_SelectedIndexChanged">
+                    </Picker>
+                </StackLayout>
+
+
+                <!--<Label Text="Status" FontSize="Medium" />
+                <Entry x:Name="Status" Text="{Binding Model.Status}" FontSize="Small" />-->
+
+                <StackLayout>
+                    <Picker x:Name="PckStatus"
+                        Title="Selecione Status da Oportunidade:">
+
+                        <Picker.Items>
+                            <x:String>Iniciado</x:String>
+                            <x:String>Em atendimento</x:String>
+                            <x:String>Recusado</x:String>
+                            <x:String>Orçamento</x:String>
+                            <x:String>Vendido</x:String>
+                        </Picker.Items>
+
+                    </Picker>
+                </StackLayout>
+
+
+                <Label Text="Descrição" FontSize="Medium" />
+                <Entry x:Name="Description" Text="{Binding Model.Description}" FontSize="Small" Margin="0" />
+
+                <Label Text="CEP" FontSize="Medium" />
+                <Entry x:Name="Cep" Text="{Binding Model.Cep}" Completed="OnEnterPressed" Keyboard="Numeric"  MaxLength="8" FontSize="Small" Margin="0"/>
+
+                <Label Text="Logradouro" FontSize="Medium" />
+                <Entry x:Name="Logradouro" Text="{Binding Model.Logradouro}" FontSize="Small" Margin="0" />
+
+                <Label Text="Complemento" FontSize="Medium" />
+                <Entry x:Name="Complemento" Text="{Binding Model.Complemento}" FontSize="Small" Margin="0" />
+
+                <Label Text="Bairro" FontSize="Medium" />
+                <Entry x:Name="Bairro" Text="{Binding Model.Bairro}" FontSize="Small" Margin="0" />
+
+                <Label Text="Localidade" FontSize="Medium" />
+                <Entry x:Name="Localidade" Text="{Binding Model.Localidade}" FontSize="Small" Margin="0" />
+
+                <Label Text="Uf" FontSize="Medium" />
+                <Entry x:Name="Uf" Text="{Binding Model.Uf}" FontSize="Small" Margin="0" />
+
+                <Label Text="Numero" FontSize="Medium" />
+                <Entry x:Name="Numero" Text="{Binding Model.Numero}" Keyboard="Numeric" FontSize="Small" Margin="0" />
+
+            </StackLayout>
+
+        </ScrollView>
+    </ContentPage.Content>
+
+</ContentPage>
